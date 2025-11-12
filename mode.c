@@ -31,7 +31,7 @@ int main() {
 			weekToDate(menu);
 		}
 		else if (month == 0 && day == 4) {
-			batmode(1);
+			batMode(1,menu);
 		}else {
 			dateHandle(month, day, 1);
 		}

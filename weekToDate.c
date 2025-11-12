@@ -6,7 +6,7 @@ int weekToDate(char menu[]) {
 	int week = 0, dayOfWeek = 0;
 	system("cls");//清屏
 	printf("您已进入新程序\n");
-	printf("\n隐藏功能:\n0 0退出程序\n0 1返回默认程序\n\n");
+	printf("\n隐藏功能:\n0 0退出程序\n0 1返回默认程序\n0 4批量处理模式\n\n");
 	while (1) {
 		printf("请输入校历(周 日):\n例如:第6周星期五,输入6 5\n");
 		fflush(stdout);//强制刷新缓存保障printf的东西可以立即出来
@@ -20,7 +20,9 @@ int weekToDate(char menu[]) {
 			printf(menu);
 			return 0;
 		}
-		else {
+		else if (week == 0 && dayOfWeek == 4) {
+			batMode(2);
+		}else {
 			dateHandle(week, dayOfWeek, 2);
 		}
 	}
