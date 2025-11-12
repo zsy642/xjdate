@@ -131,6 +131,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\source\c作品集\各种项目\社会与西交日期匹配\defenceMistake.c" />
+    <ClCompile Include="batMode.c" />
     <ClCompile Include="dateCheck.c" />
     <ClCompile Include="dateHandle.c" />
     <ClCompile Include="fileHandle.c" />
@@ -145,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\source\c作品集\各种项目\社会与西交日期匹配\defenceMistake.h" />
+    <ClInclude Include="batMode.h" />
     <ClInclude Include="dateCheck.h" />
     <ClInclude Include="dateHandle.h" />
     <ClInclude Include="fileHandle.h" />
