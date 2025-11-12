@@ -9,7 +9,8 @@
 int main() {
 	int month = 0, day = 0;
 	char schoolStartTime[1024];
-	printf("隐藏功能:\n0 1更新开学日期\n0 2打开校历\n0 3切换到校历转日期\n0 4批量处理模式\n\n");
+	char menu[] ="隐藏功能:\n0 1更新开学日期\n0 2打开校历\n0 3切换到校历转日期\n0 4批量处理模式\n\n" ;
+	printf(menu);
 	while (1)
 	{
 		fileHandle(schoolStartTime);//month,day,week,现在是星期几,总共多少天
@@ -27,10 +28,10 @@ int main() {
 			system("schoolcalendar.jpg");
 		}
 		else if (month == 0 && day == 3) {
-			weekToDate();
+			weekToDate(menu);
 		}
 		else if (month == 0 && day == 4) {
-			batmode();
+			batmode(1);
 		}else {
 			dateHandle(month, day, 1);
 		}

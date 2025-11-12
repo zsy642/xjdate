@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "weekToDate.h"
 #include "defenceMistake.h"
-int weekToDate() {
+int weekToDate(char menu[]) {
 	int week = 0, dayOfWeek = 0;
 	system("cls");//清屏
 	printf("您已进入新程序\n");
@@ -17,7 +17,7 @@ int weekToDate() {
 		}
 		else if (week == 0 && dayOfWeek == 1) {
 			system("cls");//清屏
-			printf("隐藏功能:\n0 1更新开学日期\n0 2打开校历\n0 3切换到校历转日期\n\n");
+			printf(menu);
 			return 0;
 		}
 		else {

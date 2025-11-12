@@ -1,6 +1,6 @@
 ﻿#include "batMode.h"
 #include "defenceMistake.h"
-void batmode() {
+void batmode(int option) {
 	stubFunction("批处理函数");
 }
 
