@@ -1,5 +1,6 @@
 ﻿#ifndef DEFENCEMISTAKE_H
 #define DEFENCEMISTAKE_H
+#define _CRT_SECURE_NO_WARNINGS
 #define FILE_CHECK(ptr,tip)	\
 do{\
     if (ptr) {\

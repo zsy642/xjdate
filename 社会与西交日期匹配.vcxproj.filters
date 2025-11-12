@@ -33,6 +33,9 @@
     <ClCompile Include="weekToDate.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="batMode.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="remead.txt">
@@ -56,6 +59,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="weekToDate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="batMode.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
