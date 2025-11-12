@@ -16,7 +16,7 @@ int main() {
 		fileHandle(schoolStartTime);//month,day,week,现在是星期几,总共多少天
 		printf("请输入日期(月 日,输入0 0退出程序):\n例如:6月5日,输入6 5\n");
 		fflush(stdout);
-		defenceMistake(&month, 0, 12,"输入月份不在正常范围");
+		defenceMistake(&month, 0, 12,"输入数据不在正常范围");
 		defenceMistake(&day, 0, 31, "请重新输入日,无需输入月");
 		if (month == 0 && day == 0) {
 			return 0;

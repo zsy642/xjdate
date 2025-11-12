@@ -23,6 +23,7 @@ void defenceMistake(int* checkVar,int start ,int over,char faultTip[]) { //待�
 			break;
 		}else{
 			printf("数据输入错误请重新输入,%s\n", faultTip);
+			cleanCache();
 		}
 	}
 }

@@ -10,7 +10,7 @@ int weekToDate(char menu[]) {
 	while (1) {
 		printf("请输入校历(周 日):\n例如:第6周星期五,输入6 5\n");
 		fflush(stdout);//强制刷新缓存保障printf的东西可以立即出来
-		defenceMistake(&week, 0, 23, "输入周数不在正常范围");
+		defenceMistake(&week, 0, 23, "输入数据不在正常范围");
 		defenceMistake(&dayOfWeek, 0, 7, "请重新输入日,无需输入周");
 		if (week == 0 && dayOfWeek == 0) {
 			exit(1);

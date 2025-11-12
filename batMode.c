@@ -6,7 +6,7 @@ void batMode(int option , char menu[]) {
 	int period[100] = { 0 }, specificday[100] = { 0 };
 	if (option == 1) {
 		for (int i = 0;; i++) {
-			defenceMistake(&period[i],0, 12, "输入的月份不在正常范围");
+			defenceMistake(&period[i],0, 12, "输入的数据不在正常范围");
 			defenceMistake(&specificday[i], 0,31, "输入的日期参数不在正常范围");
 			if (period[i] == 0 && specificday[i] == 0) {
 				break;
@@ -18,7 +18,7 @@ void batMode(int option , char menu[]) {
 	}
 	else if (option == 2) {
 		for (int i = 0;; i++) {
-			defenceMistake(&period[i], 0, 23, "输入的星期不在正常范围");
+			defenceMistake(&period[i], 0, 23, "输入的数据不在正常范围");
 			defenceMistake(&specificday[i], 0, 7, "输入的日期不在正常范围");//即使是数组也别少打&
 			if (period[i] == 0 && specificday[i] == 0) {
 				break;
