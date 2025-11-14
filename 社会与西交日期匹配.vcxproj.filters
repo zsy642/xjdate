@@ -24,9 +24,6 @@
     <ClCompile Include="dateHandle.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="dateCheck.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\source\c作品集\各种项目\社会与西交日期匹配\defenceMistake.c">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -46,12 +43,6 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dateCheck.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="dateHandle.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="fileHandle.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -62,6 +53,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="batMode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dateHandle.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

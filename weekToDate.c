@@ -1,6 +1,8 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
 #include "weekToDate.h"
+#include "batMode.h"
+#include "dateHandle.h"
 #include "defenceMistake.h"
 int weekToDate(char menu[]) {
 	int week = 0, dayOfWeek = 0;
@@ -21,7 +23,7 @@ int weekToDate(char menu[]) {
 			return 0;
 		}
 		else if (week == 0 && dayOfWeek == 4) {
-			batMode(2);
+			batMode(2,menu);
 		}else {
 			dateHandle(week, dayOfWeek, 2);
 		}
