@@ -1,16 +1,17 @@
 ﻿//你能写中文注释吗,选项卡是tab,退出esc
+//全局变量在systemTool.c
 #include <stdio.h>           //头文件包含的库主文件没必要写了
 #include <stdlib.h>
 #include "dateHandle.h"           //填充日期数组
 #include "weekToDate.h"
 #include "defenceMistake.h"
 #include "batmode.h"
+#include "systemTool.h"
 #include "fileHandle.h"
 int main() {
 	int month = 0, day = 0;
 	char schoolStartTime[1024];
-	char menu[] ="隐藏功能:\n0 1更新开学日期\n0 2打开校历\n0 3切换到校历转日期\n0 4批量处理模式\n\n" ;
-	printf(menu);
+	clsToMenu(g_menu);
 	while (1)
 	{
 		fileHandle(schoolStartTime);//month,day,week,现在是星期几,总共多少天
@@ -28,10 +29,13 @@ int main() {
 			system("schoolcalendar.jpg");
 		}
 		else if (month == 0 && day == 3) {
-			weekToDate(menu);
+			weekToDate();
 		}
 		else if (month == 0 && day == 4) {
-			batMode(1,menu);
+			batMode(1);
+		}
+		else if (month == 0 && day == 5) {
+			clsToMenu(g_menu);
 		}else {
 			dateHandle(month, day, 1);
 		}
