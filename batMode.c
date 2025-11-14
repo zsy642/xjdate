@@ -1,7 +1,9 @@
 ﻿#include "batMode.h"
+#include <stdio.h>
 #include "defenceMistake.h"
 #include "dateHandle.h"
-void batMode(int option , char menu[]) {
+#include "systemTool.h"
+void batMode(int option) {
 	printf("\n请输入日期,不同日期之间用回车或空格间隔,输入0 0结束返回上一级模式\n");
 	int period[100] = { 0 }, specificday[100] = { 0 };
 	if (option == 1) {
@@ -28,6 +30,5 @@ void batMode(int option , char menu[]) {
 			dateHandle(period[i], specificday[i], option);
 		}
 	}
-	printf("\n%s", menu);
-	//stubFunction("批处理函数");
+	printf("\n%s", g_menu);
 }

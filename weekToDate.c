@@ -1,29 +1,33 @@
-ï»¿#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "weekToDate.h"
 #include "batMode.h"
+#include "systemTool.h"
 #include "dateHandle.h"
 #include "defenceMistake.h"
-int weekToDate(char menu[]) {
+int weekToDate() {
 	int week = 0, dayOfWeek = 0;
-	system("cls");//æ¸…å±
-	printf("æ‚¨å·²è¿›å…¥æ–°ç¨‹åº\n");
-	printf("\néšè—åŠŸèƒ½:\n0 0é€€å‡ºç¨‹åº\n0 1è¿”å›é»˜è®¤ç¨‹åº\n0 4æ‰¹é‡å¤„ç†æ¨¡å¼\n\n");
+	system("cls");//ÇåÆÁ
+	printf("ÄúÒÑ½øÈëĞÂ³ÌĞò\n");
+	char menu[] = "\nÒş²Ø¹¦ÄÜ:\n0 0ÍË³ö³ÌĞò\n0 1·µ»ØÄ¬ÈÏ³ÌĞò\n0 4ÅúÁ¿´¦ÀíÄ£Ê½\n0 5Ë¢ĞÂ\n\n";
+	printf(menu);
 	while (1) {
-		printf("è¯·è¾“å…¥æ ¡å†(å‘¨ æ—¥):\nä¾‹å¦‚:ç¬¬6å‘¨æ˜ŸæœŸäº”,è¾“å…¥6 5\n");
-		fflush(stdout);//å¼ºåˆ¶åˆ·æ–°ç¼“å­˜ä¿éšœprintfçš„ä¸œè¥¿å¯ä»¥ç«‹å³å‡ºæ¥
-		defenceMistake(&week, 0, 23, "è¾“å…¥æ•°æ®ä¸åœ¨æ­£å¸¸èŒƒå›´");
-		defenceMistake(&dayOfWeek, 0, 7, "è¯·é‡æ–°è¾“å…¥æ—¥,æ— éœ€è¾“å…¥å‘¨");
+		printf("ÇëÊäÈëĞ£Àú(ÖÜ ÈÕ):\nÀıÈç:µÚ6ÖÜĞÇÆÚÎå,ÊäÈë6 5\n");
+		fflush(stdout);//Ç¿ÖÆË¢ĞÂ»º´æ±£ÕÏprintfµÄ¶«Î÷¿ÉÒÔÁ¢¼´³öÀ´
+		defenceMistake(&week, 0, 23, "ÊäÈëÊı¾İ²»ÔÚÕı³£·¶Î§");
+		defenceMistake(&dayOfWeek, 0, 7, "ÇëÖØĞÂÊäÈëÈÕ,ÎŞĞèÊäÈëÖÜ");
 		if (week == 0 && dayOfWeek == 0) {
 			exit(1);
 		}
 		else if (week == 0 && dayOfWeek == 1) {
-			system("cls");//æ¸…å±
-			printf(menu);
+			clsToMenu(g_menu);
 			return 0;
 		}
 		else if (week == 0 && dayOfWeek == 4) {
-			batMode(2,menu);
+			batMode(2);
+		}
+		else if (week == 0 && dayOfWeek == 5) {
+			clsToMenu(menu);
 		}else {
 			dateHandle(week, dayOfWeek, 2);
 		}

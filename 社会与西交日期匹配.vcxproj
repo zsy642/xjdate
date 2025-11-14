@@ -137,17 +137,19 @@
     <ClCompile Include="mode.c">
       <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_CRT_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="systemTool.c" />
     <ClCompile Include="weekToDate.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="date.txt" />
-    <Text Include="remead.txt" />
+    <Text Include="remead.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\source\c作品集\各种项目\社会与西交日期匹配\defenceMistake.h" />
     <ClInclude Include="batMode.h" />
     <ClInclude Include="dateHandle.h" />
     <ClInclude Include="fileHandle.h" />
+    <ClInclude Include="systemTool.h" />
     <ClInclude Include="weekToDate.h" />
   </ItemGroup>
   <ItemGroup>
