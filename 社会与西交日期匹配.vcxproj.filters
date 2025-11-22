@@ -33,11 +33,11 @@
     <ClCompile Include="batMode.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="systemTool.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="remead.txt">
-      <Filter>资源文件</Filter>
-    </Text>
     <Text Include="date.txt">
       <Filter>资源文件</Filter>
     </Text>
@@ -58,6 +58,9 @@
     <ClInclude Include="dateHandle.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="systemTool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="schoolcalendar.jpg">
@@ -69,6 +72,9 @@
       <Filter>资源文件</Filter>
     </None>
     <None Include=".gitignore">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="README.md">
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>

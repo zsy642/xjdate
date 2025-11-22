@@ -1,24 +1,30 @@
-ï»¿//ä½ èƒ½å†™ä¸­æ–‡æ³¨é‡Šå—,é€‰é¡¹å¡æ˜¯tab,é€€å‡ºesc
-//å…¨å±€å˜é‡åœ¨systemTool.c
-#include <stdio.h>           //å¤´æ–‡ä»¶åŒ…å«çš„åº“ä¸»æ–‡ä»¶æ²¡å¿…è¦å†™äº†
+//ÄãÄÜĞ´ÖĞÎÄ×¢ÊÍÂğ,Ñ¡Ïî¿¨ÊÇtab,ÍË³öesc
+//È«¾Ö±äÁ¿ÔÚsystemTool.c
+#include <stdio.h>           //Í·ÎÄ¼ş°üº¬µÄ¿âÖ÷ÎÄ¼şÃ»±ØÒªĞ´ÁË
 #include <stdlib.h>
-#include "dateHandle.h"           //å¡«å……æ—¥æœŸæ•°ç»„
+#include "dateHandle.h"           //Ìî³äÈÕÆÚÊı×é
 #include "weekToDate.h"
 #include "defenceMistake.h"
 #include "batmode.h"
 #include "systemTool.h"
 #include "fileHandle.h"
-int main() {
+int main(int argc,char** argv) {
 	int month = 0, day = 0;
 	char schoolStartTime[1024];
 	clsToMenu(g_menu);
+	int usenum = 0;
 	while (1)
 	{
-		fileHandle(schoolStartTime);//month,day,week,ç°åœ¨æ˜¯æ˜ŸæœŸå‡ ,æ€»å…±å¤šå°‘å¤©
-		printf("è¯·è¾“å…¥æ—¥æœŸ(æœˆ æ—¥,è¾“å…¥0 0é€€å‡ºç¨‹åº):\nä¾‹å¦‚:6æœˆ5æ—¥,è¾“å…¥6 5\n");
+		fileHandle(schoolStartTime);//month,day,week,ÏÖÔÚÊÇĞÇÆÚ¼¸,×Ü¹²¶àÉÙÌì
+		printf("ÇëÊäÈëÈÕÆÚ(ÔÂ ÈÕ,ÊäÈë0 0ÍË³ö³ÌĞò):\nÀıÈç:6ÔÂ5ÈÕ,ÊäÈë6 5\n");
 		fflush(stdout);
-		defenceMistake(&month, 0, 12,"è¾“å…¥æ•°æ®ä¸åœ¨æ­£å¸¸èŒƒå›´");
-		defenceMistake(&day, 0, 31, "è¯·é‡æ–°è¾“å…¥æ—¥,æ— éœ€è¾“å…¥æœˆ");
+		if (usenum > 0) {
+			defenceMistake(&month, 0, 12, "ÊäÈëÊı¾İ²»ÔÚÕı³£·¶Î§");
+			defenceMistake(&day, 0, 31, "ÇëÖØĞÂÊäÈëÈÕ,ÎŞĞèÊäÈëÔÂ");
+		}else {
+			getVarWithCMD(&month, &day, argc, argv);
+		}
+		usenum++;
 		if (month == 0 && day == 0) {
 			return 0;
 		}
