@@ -1,6 +1,7 @@
-ï»¿#ifndef SYSTEMTOOL_H
+#ifndef SYSTEMTOOL_H
 #define SYSTEMTOOL_H
 extern char g_menu[];
 void clsToMenu(char menu[]);
+int getVarWithCMD(int* month, int* day, int argc, char** argv);
 #endif // !SYSTEMTOOL_H
-//å…¨å±€å˜é‡å®šä¹‰åœ¨æºæ–‡ä»¶,å¤´æ–‡ä»¶extern,åˆ«çš„æ–‡ä»¶å¼•ç”¨å®ƒåç›´æ¥ç”¨,ä¸èƒ½å®šä¹‰åœ¨å¤´æ–‡ä»¶
+//È«¾Ö±äÁ¿¶¨ÒåÔÚÔ´ÎÄ¼ş,Í·ÎÄ¼şextern,±ğµÄÎÄ¼şÒıÓÃËüºóÖ±½ÓÓÃ,²»ÄÜ¶¨ÒåÔÚÍ·ÎÄ¼ş

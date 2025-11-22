@@ -142,7 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="date.txt" />
-    <Text Include="remead.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\source\c作品集\各种项目\社会与西交日期匹配\defenceMistake.h" />
@@ -158,6 +157,7 @@
   <ItemGroup>
     <None Include=".gitattributes" />
     <None Include=".gitignore" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
