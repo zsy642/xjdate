@@ -15,6 +15,10 @@ int getVarWithCMD(int* month, int* day, int argc, char** argv) {
 		int date[2] = { 0 };
 		date[0] = atoi(argv[1]);//2就是2 不是ASCII
 		date[1] = atoi(argv[2]);
+		if (date[0] == 0 && date[1] == 6) {
+			usenum == 1;
+			return 0;
+		}
 		if (date[0] >= 0 && date[0] <= 12) {
 			*month = date[0];
 			if (date[1] >= 0 && date[1] <= 31) {

@@ -8,21 +8,22 @@
 #include "batmode.h"
 #include "systemTool.h"
 #include "fileHandle.h"
+int usenum = 0;
 int main(int argc,char** argv) {
 	int month = 0, day = 0;
 	char schoolStartTime[1024];
 	clsToMenu(g_menu);
-	int usenum = 0;
 	while (1)
 	{
 		fileHandle(schoolStartTime);//month,day,week,现在是星期几,总共多少天
 		printf("请输入日期(月 日,输入0 0退出程序):\n例如:6月5日,输入6 5\n");
 		fflush(stdout);
+		if(usenum==0) {
+			getVarWithCMD(&month, &day, argc, argv);
+		}
 		if (usenum > 0) {
 			defenceMistake(&month, 0, 12, "输入数据不在正常范围");
 			defenceMistake(&day, 0, 31, "请重新输入日,无需输入月");
-		}else {
-			getVarWithCMD(&month, &day, argc, argv);
 		}
 		usenum++;
 		if (month == 0 && day == 0) {

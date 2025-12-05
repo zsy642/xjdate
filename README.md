@@ -2,7 +2,7 @@
 
 ## 更改计划
 - 把 readme 改成 .md
-- 调整 defencemistake(X){加不定参数用处不大}
+- 调整 defencemistake(复用版本)
 - 调整文字提示使程序整洁统一
 - 写测试和日志
 - 添加命令行参数()
