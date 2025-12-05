@@ -16,13 +16,14 @@ int getVarWithCMD(int* month, int* day, int argc, char** argv) {
 		date[0] = atoi(argv[1]);//2就是2 不是ASCII
 		date[1] = atoi(argv[2]);
 		if (date[0] == 0 && date[1] == 6) {
-			usenum == 1;
+			g_flag = 1;
 			return 0;
 		}
 		if (date[0] >= 0 && date[0] <= 12) {
 			*month = date[0];
 			if (date[1] >= 0 && date[1] <= 31) {
 				*day = date[1];
+				g_flag = 1;
 				return 0;
 			}else {
 				printf("数据输入错误请重新输入,请重新输入日,无需输入月\n");
@@ -30,8 +31,8 @@ int getVarWithCMD(int* month, int* day, int argc, char** argv) {
 		}else {
 			printf("数据输入错误请重新输入,输入数据不在正常范围\n");
 		}
+	}else {
+		g_flag = 1;
+		return 0;
 	}
-	defenceMistake(month, 0, 12, "输入数据不在正常范围");
-	defenceMistake(day, 0, 31, "请重新输入日,无需输入月");
-	return 0;
 }
