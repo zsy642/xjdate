@@ -1,4 +1,4 @@
-ï»¿#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #include "dateHandle.h"
 #include"fileHandle.h"
 #include "defenceMistake.h"
@@ -15,7 +15,7 @@ void dateHandle(int period,int specificday,int option) {
 	dateFill(MonthlyDayInTerm);
 
 	if (option == 1) {
-		int specificmonth = period; //å˜é‡ç”Ÿå‘½å‘¨æœŸåœ¨å¤§æ‹¬å·é—´,è¿™ä¸ªå˜é‡if(==2)é‚£å°±ç”¨ä¸äº†
+		int specificmonth = period; //±äÁ¿ÉúÃüÖÜÆÚÔÚ´óÀ¨ºÅ¼ä,Õâ¸ö±äÁ¿if(==2)ÄÇ¾ÍÓÃ²»ÁË
 		for (int i = 0; i < dateMapping(specificmonth); i++) {
 			sum += MonthlyDayInTerm[i];
 		}
@@ -26,15 +26,15 @@ void dateHandle(int period,int specificday,int option) {
 			sum += specificday;
 		}
 		int week = 1;
-		for (week = 1; 1; week++) { //for (int i = 1; 1; i++) {//cè¯­è¨€,å‡½æ•°å†…å¤–å˜é‡é‡åçš„æ—¶å€™,å†…éƒ¨ä¼˜å…ˆ,ä½†æˆ‘å»ºè®®ä½ åˆ«ä½œ,è¿™æ ·å†…éƒ¨çš„å‡ºä¸æ¥
+		for (week = 1; 1; week++) { //for (int i = 1; 1; i++) {//cÓïÑÔ,º¯ÊıÄÚÍâ±äÁ¿ÖØÃûµÄÊ±ºò,ÄÚ²¿ÓÅÏÈ,µ«ÎÒ½¨ÒéÄã±ğ×÷,ÕâÑùÄÚ²¿µÄ³ö²»À´
 			if (sum > 7) {
-				sum -= 7;           //æ±‚è¿™å¤©æ˜ŸæœŸå‡ 
+				sum -= 7;           //ÇóÕâÌìĞÇÆÚ¼¸
 			}
 			else {
 				break;
 			}
 		}
-		printf("ç¬¬%då‘¨å‘¨%d\n", week, sum);
+		printf("µÚ%dÖÜÖÜ%d\n", week, sum);
 	}
 	else if (option == 2) {
 		int specificweek = period, increment = 0;
@@ -48,7 +48,7 @@ void dateHandle(int period,int specificday,int option) {
 				if (increment == 0) {
 					sum = sum - 1 + s_dayNum;
 				}
-				printf("%dæœˆ%då·\n", s_monthNum + increment, sum);
+				printf("%dÔÂ%dºÅ\n", (s_monthNum + increment)%12, sum);
 				break;
 			}
 		}
@@ -57,17 +57,17 @@ void dateHandle(int period,int specificday,int option) {
 
 void dateFill(int MonthlyDayInTerm[]) {
 	char schoolStartTime[1024];  
-	fileHandle(schoolStartTime);//month,day,week,ç°åœ¨æ˜¯æ˜ŸæœŸå‡ ,æ€»å…±å¤šå°‘å¤©
-	int dayOfXjMonth[12] = { 30,31,30,31,31,28,31,30,31,30,31,31 };//ä¸€ä¸ªæ˜¯é•¿åº¦,ä¸€ä¸ªæ˜¯ç´¢å¼•.æˆ‘æœäº†//xjæ¯ä¸ªæœˆçš„å¤©æ•°,ç”¨staticæ•°ç»„é‡Œæœªå®šä¹‰çš„å€¼æ˜¯é›¶,å¦åˆ™ä¸ºåƒåœ¾å€¼,åé¢çš„æ•°ç»„æ˜¯è¥¿äº¤è¿™å­¦æœŸæ¯ä¸ªæœˆçš„å¤©æ•°
+	fileHandle(schoolStartTime);//month,day,week,ÏÖÔÚÊÇĞÇÆÚ¼¸,×Ü¹²¶àÉÙÌì
+	int dayOfXjMonth[12] = { 30,31,30,31,31,28,31,30,31,30,31,31 };//Ò»¸öÊÇ³¤¶È,Ò»¸öÊÇË÷Òı.ÎÒ·şÁË//xjÃ¿¸öÔÂµÄÌìÊı,ÓÃstaticÊı×éÀïÎ´¶¨ÒåµÄÖµÊÇÁã,·ñÔòÎªÀ¬»øÖµ,ºóÃæµÄÊı×éÊÇÎ÷½»ÕâÑ§ÆÚÃ¿¸öÔÂµÄÌìÊı
 	char year[5], month[3], day[3];
 	strncpy(year, schoolStartTime + 0, 4);
-	year[4] = '\0';                                     //è·å–å¹´ä»½
+	year[4] = '\0';                                     //»ñÈ¡Äê·İ
 	strncpy(month, schoolStartTime + 4, 2);
 	month[2] = '\0';
-	strncpy(day, schoolStartTime + 6, 2);              //åŸç†è§å­—ç¬¦ä¸²
-	day[2] = '\0';                   //ç´¢å¼•ä»0å¼€å§‹
+	strncpy(day, schoolStartTime + 6, 2);              //Ô­Àí¼û×Ö·û´®
+	day[2] = '\0';                   //Ë÷Òı´Ó0¿ªÊ¼
 	int yearNum;
-	yearNum = atoi(year), s_monthNum = atoi(month), s_dayNum = atoi(day);   //ä½ æ²¡åŒ…å«ä»–çš„å¤´æ–‡ä»¶,ç”¨crtlçœ‹ä¸äº†è¿™ä¸ªå‡½æ•°å†™çš„å•¥
+	yearNum = atoi(year), s_monthNum = atoi(month), s_dayNum = atoi(day);   //ÄãÃ»°üº¬ËûµÄÍ·ÎÄ¼ş,ÓÃcrtl¿´²»ÁËÕâ¸öº¯ÊıĞ´µÄÉ¶
 	for (int i = 0; i < dateMapping(s_monthNum); i++) {
 		MonthlyDayInTerm[i] = 0;
 	}
@@ -87,16 +87,16 @@ int dateMapping(int dayOfCalendar) {
 void dateUpdate() {
 	char filepath[] = "date.txt";
 	FILE* tofile = fopen(filepath, "w");
-	FILE_CHECK(NULL == tofile, "æ—¥æœŸæ›´æ–°å‡ºé”™");
+	FILE_CHECK(NULL == tofile, "ÈÕÆÚ¸üĞÂ³ö´í");
 	int cresult = fclose(tofile);
-	FILE_CHECK(0 != cresult, "æ›´æ–°å…³é—­å‡ºé”™");
+	FILE_CHECK(0 != cresult, "¸üĞÂ¹Ø±Õ³ö´í");
 }
 
 int dateCheck() {
 	time_t ti;
 	time(&ti);
 	struct tm* datep;
-	datep = localtime(&ti);//å¹´åŠ 1900,æœˆåŠ 1
+	datep = localtime(&ti);//Äê¼Ó1900,ÔÂ¼Ó1
 	//printf("%d %d %d", datep->tm_year+1900, datep->tm_mon+1,datep->tm_mday);
 	if ((datep->tm_mon + 1) == 8 && datep->tm_mday == 24) {
 		return 2;
@@ -107,4 +107,4 @@ int dateCheck() {
 	else {
 		return 3;
 	}
-} //æ—¥æœŸåˆ¤æ–­,å†³å®šæ˜¯å¦éœ€è¦æ›´æ–°æ–‡ä»¶
+} //ÈÕÆÚÅĞ¶Ï,¾ö¶¨ÊÇ·ñĞèÒª¸üĞÂÎÄ¼ş
