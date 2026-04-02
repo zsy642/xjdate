@@ -17,6 +17,7 @@ int main(int argc,char** argv) {
 	while (1)
 	{
 		fileHandle(schoolStartTime);//month,day,week,现在是星期几,总共多少天
+		printf("当前学期开学日期为:%.4s年%.2s月%.2s日\n", schoolStartTime, schoolStartTime + 4, schoolStartTime + 6);
 		fflush(stdout);
 		if (g_flag > 0) {
 			printf("请输入日期(月 日,输入0 0退出程序):\n例如:6月5日,输入6 5\n");
