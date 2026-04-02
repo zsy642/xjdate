@@ -155,6 +155,7 @@
     <Image Include="schoolcalendar.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\..\..\sofeCMDpathFile\xjdate.cmd" />
     <None Include=".gitattributes" />
     <None Include=".gitignore" />
     <None Include="README.md" />
